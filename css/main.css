@@ -1,0 +1,46 @@
+html {
+    font-size: 1em;
+}
+
+#temperature-info {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.content-holder {
+    padding: 0 0 0.5em 0;
+    font-size: 2.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.grid-item {
+  background-color: #444;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 150%;
+}
