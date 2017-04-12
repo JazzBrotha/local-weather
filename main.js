@@ -4,7 +4,7 @@ const weatherIcon = document.getElementById('weather-icon');
 const infoContainer = document.getElementById('info-container');
 
 function getLocation() {
-    fetch('http://ipinfo.io/json').then(response => {
+    fetch('https://ipinfo.io/json').then(response => {
         response.json().then(json => {
             const city = json.city;
             getWeather(city);
@@ -16,7 +16,7 @@ function getLocation() {
 }
 
 function getWeather(city) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=183e1b1ca432817bcee811d5a817920d`).then(response => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=183e1b1ca432817bcee811d5a817920d`).then(response => {
         response.json().then(json => {
             cityInfo.innerHTML = `${city}</h1>`;
             tempInfo.innerHTML = `${Math.round(json.main.temp)}&#176C / ${(Math.round(json.main.temp)*9/5+32)}&#176F`;
