@@ -1,6 +1,5 @@
 //jshint esversion:6
 const cityInfo = document.getElementById('city-info');
-const weatherInfo = document.getElementById('weather-info');
 const tempInfo = document.getElementById('temperature-info');
 const weatherIcon = document.getElementById('weather-icon');
 const infoContainer = document.getElementById('info-container');
@@ -20,14 +19,8 @@ function getLocation() {
 function getWeather(city) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=183e1b1ca432817bcee811d5a817920d`).then(response => {
         response.json().then(json => {
-            cityInfo.innerHTML = `${city}<br>`;
-            weatherInfo.innerHTML = `${json.weather[0].main}<br>`;
-            tempInfo.innerHTML = `${Math.round(json.main.temp)}&#176C`;
-            tempInfo.onclick = () => {
-                if (tempInfo.innerHTML[tempInfo.innerHTML.length - 1] === 'C')
-                    tempInfo.innerHTML = `${(Math.round(json.main.temp)*9/5+32)}&#176F`;
-                else tempInfo.innerHTML = `${Math.round(json.main.temp)}&#176C`;
-            };
+            cityInfo.innerHTML = `${city}</h1>`;
+            tempInfo.innerHTML = `${Math.round(json.main.temp)}&#176C / ${(Math.round(json.main.temp)*9/5+32)}&#176F`;
             iconSwitcher(json.weather[0].main);
         });
     }).catch(function(err) {

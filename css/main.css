@@ -1,35 +1,33 @@
 html {
     font-size: 1em;
+    font-family: 'Lato', sans-serif;
 }
 
-#temperature-info {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
+body {
+  overflow: hidden;
+  background-color: #EEB868;
+  color: white;
 }
 
-.flex-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.section-header {
-    font-size: 3rem;
-    text-align: center;
-}
-
-.content-holder {
-    padding: 0 0 0.5em 0;
-    font-size: 2.5rem;
+  flex-direction: column;
 }
 
 .weather-icon {
-  width: 200%;
-  height: 200%;
+  width: 450px;
+  margin-top: -100px;
 }
