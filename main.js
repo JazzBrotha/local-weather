@@ -1,19 +1,18 @@
-//jshint esversion:6
 const cityInfo = document.getElementById('city-info');
 const tempInfo = document.getElementById('temperature-info');
 const weatherIcon = document.getElementById('weather-icon');
 const infoContainer = document.getElementById('info-container');
 
 function getLocation() {
- fetch('http://ipinfo.io/json').then(response => {
-    response.json().then(json => {
-        const city = json.city;
-        getWeather(city);
+    fetch('http://ipinfo.io/json').then(response => {
+        response.json().then(json => {
+            const city = json.city;
+            getWeather(city);
+        });
+    }).catch(function(err) {
+        console.log(err);
+        infoContainer.innerHTML = "Sorry, could not find your location.";
     });
-  }).catch(function(err) {
-    console.log(err);
-    infoContainer.innerHTML = `Sorry, could not find your location.`;
-});
 }
 
 function getWeather(city) {
@@ -24,9 +23,9 @@ function getWeather(city) {
             iconSwitcher(json.weather[0].main);
         });
     }).catch(function(err) {
-      console.log(err);
-      infoContainer.innerHTML = `Sorry, the weather for your location could not be displayed.`;
-  });
+        console.log(err);
+        infoContainer.innerHTML = "Sorry, the weather for your location could not be displayed.";
+    });
 }
 
 function iconSwitcher(currentWeather) {
@@ -34,7 +33,7 @@ function iconSwitcher(currentWeather) {
     const img = document.createElement('img');
     img.className = 'weather-icon';
     weatherIcon.appendChild(img);
-      switch (weatherCase) {
+    switch (weatherCase) {
         case 'snow':
             img.src = 'icons/snow.svg';
             break;
