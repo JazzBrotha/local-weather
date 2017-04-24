@@ -29,7 +29,7 @@ function getWeather(city) {
 }
 
 function iconSwitcher(currentWeather) {
-    let weatherCase = currentWeather.toLowerCase();
+    const weatherCase = currentWeather.toLowerCase();
     const img = document.createElement('img');
     img.className = 'weather-icon';
     weatherIcon.appendChild(img);
